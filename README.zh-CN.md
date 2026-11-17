@@ -19,10 +19,11 @@ The encrypted content for item rs_… could not be verified.
 ## 安装
 
 ```sh
-magpie plugin add magpie-codex-stateless          # npm
-magpie plugin add github:aqiu817/magpie-codex-stateless   # 或 GitHub
-magpie plugin add ./magpie-codex-stateless        # 或本地文件夹
+magpie plugin add github:aqiu817/magpie-codex-stateless   # 从 GitHub（推荐）
+magpie plugin add ./magpie-codex-stateless                # 或本地文件夹
 ```
+
+> 注意：本包是纯中间件（无供应商入口）。当前版本的 magpie 对按名安装的纯中间件 npm 包会在宿主校验时报错（`magpie plugin add magpie-codex-stateless`），请从 GitHub 或本地文件夹安装。npm 包保留用于 registry/搜索元数据。
 
 装上开着即可，默认静默。
 

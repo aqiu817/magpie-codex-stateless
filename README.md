@@ -19,12 +19,11 @@ Measured on a real relay (agentrouter, Responses-native passthrough): a 1:1 Code
 ## Install
 
 ```sh
-magpie plugin add magpie-codex-stateless          # npm
-# or from GitHub:
-magpie plugin add github:aqiu817/magpie-codex-stateless
-# or from a folder:
-magpie plugin add ./magpie-codex-stateless
+magpie plugin add github:aqiu817/magpie-codex-stateless   # from GitHub (recommended)
+magpie plugin add ./magpie-codex-stateless                # or from a local folder
 ```
+
+> Note: this is a middleware-only package (no provider entry point). Current magpie builds reject middleware-only **npm** packages at the host check when installed by name (`magpie plugin add magpie-codex-stateless`), so install from GitHub or a folder. The npm package exists for registry/search metadata.
 
 Then just leave it on. It is silent by default.
 
