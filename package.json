@@ -1,0 +1,47 @@
+{
+  "name": "magpie-codex-stateless",
+  "version": "0.1.0",
+  "description": "magpie gateway middleware for GPT models over the Responses API: strips previous_response_id, item ids and encrypted reasoning from requests before routing, fixing the Azure-OpenAI resource-bound 400s ('item was created under a different resource', 'Previous response not found', 'encrypted content could not be verified') that Codex hits on multi-resource Azure relays",
+  "type": "module",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "magpie",
+    "codex",
+    "responses",
+    "azure",
+    "middleware",
+    "reasoning",
+    "stateless"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aqiu817/magpie-codex-stateless.git"
+  },
+  "files": [
+    "codex-stateless.middleware.js",
+    "lib/",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "magpie": {
+    "middleware": "./codex-stateless.middleware.js",
+    "name": "Codex Stateless",
+    "icon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230ea5e9'/%3E%3Cg stroke='%23fff' stroke-width='4.5' fill='none' stroke-linecap='round'%3E%3Crect x='8' y='24' width='12' height='16' rx='6'/%3E%3Crect x='44' y='24' width='12' height='16' rx='6'/%3E%3Cpath d='M20 32h6M38 32h6'/%3E%3C/g%3E%3Cg stroke='%23fde047' stroke-width='4.5' stroke-linecap='round'%3E%3Cpath d='M28 26l8 12M28 38l8-12'/%3E%3C/g%3E%3C/svg%3E",
+    "summary": {
+      "en": "Fix Azure-relay 400s for GPT models on the Responses API: make Codex requests stateless (strip previous_response_id, item ids, encrypted reasoning) before routing.",
+      "zh": "修 GPT 模型走 Responses 协议时 Azure 系中转的 400：把 Codex 请求变成无状态形态（剥 previous_response_id、item id、加密思维链）再路由。"
+    },
+    "options": {
+      "models": "",
+      "debug": false,
+      "stripPreviousResponseId": true,
+      "stripEncrypted": true
+    }
+  }
+}
